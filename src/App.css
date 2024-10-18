@@ -36,3 +36,100 @@
     transform: rotate(360deg);
   }
 }
+
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #e74c3c;
+  --background-color: #ecf0f1;
+  --board-color: #34495e;
+  --text-color: #2c3e50;
+  --hover-color: #bdc3c7;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.game-board {
+  background-color: var(--board-color);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.board-row {
+  display: flex;
+}
+
+.square {
+  background: var(--background-color);
+  border: none;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1;
+  height: 80px;
+  margin: 5px;
+  padding: 0;
+  text-align: center;
+  width: 80px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  color: var(--text-color);
+}
+
+.square:hover {
+  background-color: var(--hover-color);
+}
+
+.square:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+}
+
+.status {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.game-info button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.game-info button:hover {
+  background-color: #2980b9;
+}
+
+/* Add X and O styles */
+.square[data-value="X"] {
+  color: var(--primary-color);
+}
+
+.square[data-value="O"] {
+  color: var(--secondary-color);
+}
